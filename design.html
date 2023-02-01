@@ -18,90 +18,89 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/feather-icons"></script>
+    
 </head>
 
 <body>
     <!-- Container -->
-    <div class="container-fluid main">
+    <div class="container-fluid main" id="container">
         <div class="calsi">
             <!-- 1st row Start-->
-            <div class="row row-set">
+            <div class="row row-set" id="r1">
 
-                <div class="col-12">
-                    <input type="text" class="form-control" id="answere" placeholder="0" disabled>
+                <div class="col-12" id="r1c1">
+                    <input type="text" class="form-control" id="answere" placeholder="0">
                 </div>
-
                 <!-- 1strow END -->
             </div>
             <!-- ------- -->
             <!-- 2nd row Start-->
-            <div class="row Row-margin">
+            <div class="row Row-margin" id="r2">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">DEG</button>
+                <div class="col-2 bdr" id="r2c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="deg">DEG</button>
                     <!-- <button type="button" value="DEG"></button> -->
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">F-E</button>
+                <div class="col-2 bdr" id="r2c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="fe">F-E</button>
                 </div>
 
                 <!-- 2nd row END -->
             </div>
             <!-- ------- -->
             <!-- 3rd row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r3">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">MC</button>
+                <div class="col-2 bdr" id="r3c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="mc">MC</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">MR</button>
+                <div class="col-2 bdr" id="r3c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="mr">MR</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">M+</button>
+                <div class="col-2 bdr" id="r3c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="m+">M+</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">M-</button>
+                <div class="col-2 bdr" id="r3c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="m-">M-</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns">MS</button>
+                <div class="col-2 bdr" id="r3c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="ms">MS</button>
                 </div>
                 <!-- 3rd row END -->
             </div>
             <!-- ------- -->
             <!-- 4th row Start-->
-            <div class="row Row-margin">
+            <div class="row Row-margin" id="r4">
 
-                <div class="col-4 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns"><span>
+                <div class="col-4 bdr" id="r4c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="trigno"><span>
                             &#8735</span>Trigonometry</i></button>
                 </div>
-                <div class="col-4 bdr">
-                    <button type="button"
-                        class="btn btn-outline-secondary w-100 h-100 upr-butns"><span>&#163</span>Function</button>
+                <div class="col-4 bdr" id="r4c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 upr-butns" id="functions"><span>&#163</span>Function</button>
                 </div>
 
                 <!-- 4th row END -->
             </div>
             <!-- ------- -->
             <!-- 5th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r5">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">2<sup>nd</sup></button>
+                <div class="col-2 bdr" id="r5c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="2nd">2<sup>nd</sup></button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn"> &#928 </button>
+                <div class="col-2 bdr" id="r5c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="pi"> &#928 </button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">e</button>
+                <div class="col-2 bdr" id="r5c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="e">e</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">C</button>
+                <div class="col-2 bdr" id="r5c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="clear">C</button>
                 </div>
-                <div class="col-2 bdr">
+                <div class="col-2 bdr" id="r5c5">
 
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn"><i
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="delete"><i
                             class="fa-solid fa-delete-left"></i></button>
 
                 </div>
@@ -109,128 +108,128 @@
             </div>
             <!-- ------- -->
             <!-- 6th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r6">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">x<sup>2</sup></button>
+                <div class="col-2 bdr" id="r6c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="square">x<sup>2</sup></button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">1/x</button>
+                <div class="col-2 bdr" id="r6c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="onebyx">1/x</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">|x|</button>
+                <div class="col-2 bdr" id="r6c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="abs">|x|</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">exp</button>
+                <div class="col-2 bdr" id="r6c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="exp">exp</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn">mod</button>
+                <div class="col-2 bdr" id="r6c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="mod">mod</button>
                 </div>
                 <!-- 6th row END -->
             </div>
             <!-- ------- -->
             <!-- 7th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r7">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">2<i
+                <div class="col-2 bdr" id="r7c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="root">2<i
                             class="fa-sharp fa-solid fa-square-root-variable"></i></button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">(</button>
+                <div class="col-2 bdr" id="r7c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="open-brace">(</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">)</button>
+                <div class="col-2 bdr" id="r7c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="close-brace">)</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">n!</button>
+                <div class="col-2 bdr" id="r7c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="factorial">n!</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">/</button>
+                <div class="col-2 bdr" id="r7c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="division" onclick="operation(this.id)">/</button>
                 </div>
                 <!-- 7th row END -->
             </div>
             <!-- ------- -->
             <!-- 8th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r8">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">x<sup>y</sup></button>
+                <div class="col-2 bdr" id="r8c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="power">x<sup>y</sup></button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">7</button>
+                <div class="col-2 bdr" id="r8c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="seven" onclick="display(this.id)">7</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">8</button>
+                <div class="col-2 bdr" id="r8c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="eight" onclick="display(this.id)">8</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">9</button>
+                <div class="col-2 bdr" id="r8c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="nine" onclick="display(this.id)">9</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">X</button>
+                <div class="col-2 bdr" id="r8c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="mul" onclick="operation(this.id)">X</button>
                 </div>
                 <!-- 8th row END -->
             </div>
             <!-- ------- -->
             <!-- 9th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r9">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">10<sup>x</sup></button>
+                <div class="col-2 bdr" id="r9c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ten">10<sup>x</sup></button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">4</button>
+                <div class="col-2 bdr" id="r9c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="four" onclick="display(this.id)">4</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">5</button>
+                <div class="col-2 bdr" id="r9c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="five" onclick="display(this.id)">5</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">6</button>
+                <div class="col-2 bdr" id="r9c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="six" onclick="display(this.id)">6</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">-</button>
+                <div class="col-2 bdr" id="r9c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="minus" onclick="operation(this.id)">-</button>
                 </div>
                 <!-- 9th row END -->
             </div>
             <!-- ------- -->
             <!-- 10th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r10">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">log</button>
+                <div class="col-2 bdr" id="r10c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="log">log</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">1</button>
+                <div class="col-2 bdr" id="r10c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="one" onclick="display(this.id)">1</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">2</button>
+                <div class="col-2 bdr" id="r10c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="two" onclick="display(this.id)">2</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">3</button>
+                <div class="col-2 bdr" id="r10c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="three" onclick="display(this.id)">3</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">+</button>
+                <div class="col-2 bdr" id="r10c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="plus" onclick="operation(this.id)">+</button>
                 </div>
                 <!-- 10th row END -->
             </div>
             <!-- ------- -->
             <!-- 11th row Start-->
-            <div class="row Row-margin row-set">
+            <div class="row Row-margin row-set" id="r11">
 
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">ln</button>
+                <div class="col-2 bdr" id="r11c1">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ln">ln</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">+/-</button>
+                <div class="col-2 bdr" id="r11c2">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="plus-min">+/-</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">0</button>
+                <div class="col-2 bdr" id="r11c3">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="zero" onclick="display(this.id)">0</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">.</button>
+                <div class="col-2 bdr" id="r11c4">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="dot">.</button>
                 </div>
-                <div class="col-2 bdr">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100">=</button>
+                <div class="col-2 bdr" id="r11c5">
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="equal" onclick="operation(this.id)">=</button>
                 </div>
                 <!-- 11th row END -->
             </div>
@@ -238,6 +237,7 @@
         </div>
     </div>
     <!-- Containerdiv -->
+    <script src="code.js"></script>
 </body>
 
 </html>
