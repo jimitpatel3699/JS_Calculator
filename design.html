@@ -27,10 +27,13 @@
         <div class="calsi">
             <!-- 1st row Start-->
             <div class="row row-set" id="r1">
-
-                <div class="col-12" id="r1c1">
-                    <input type="text" class="form-control" id="answere" placeholder="0">
+                <div class="col-12" id="r1c2">
+                    <input type="text" class="form-control" id="txtbstore" placeholder="" disabled>
                 </div>
+                <div class="col-12" id="r1c1">
+                    <input type="text" class="form-control" id="answere" placeholder="0" disabled>
+                </div>
+               
                 <!-- 1strow END -->
             </div>
             <!-- ------- -->
@@ -90,17 +93,17 @@
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="2nd">2<sup>nd</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r5c2">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="pi"> &#928 </button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="pi" onclick="pai()"> &#928 </button>
                 </div>
                 <div class="col-2 bdr" id="r5c3">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="e">e</button>
                 </div>
                 <div class="col-2 bdr" id="r5c4">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="clear">C</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="clear" onclick="clearscr(this.id)">C</button>
                 </div>
                 <div class="col-2 bdr" id="r5c5">
 
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="delete"><i
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="delete" onclick="clearscr(this.id)"><i
                             class="fa-solid fa-delete-left"></i></button>
 
                 </div>
@@ -142,7 +145,7 @@
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="close-brace">)</button>
                 </div>
                 <div class="col-2 bdr" id="r7c4">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="factorial">n!</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="factorial" onclick="factorial()">n!</button>
                 </div>
                 <div class="col-2 bdr" id="r7c5">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="division" onclick="operation(this.id)">/</button>
@@ -154,7 +157,7 @@
             <div class="row Row-margin row-set" id="r8">
 
                 <div class="col-2 bdr" id="r8c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="power">x<sup>y</sup></button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="power" onclick="log(this.id)">x<sup>y</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r8c2">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="seven" onclick="display(this.id)">7</button>
@@ -175,7 +178,7 @@
             <div class="row Row-margin row-set" id="r9">
 
                 <div class="col-2 bdr" id="r9c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ten">10<sup>x</sup></button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ten" onclick="log(this.id)">10<sup>x</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r9c2">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="four" onclick="display(this.id)">4</button>
@@ -196,7 +199,7 @@
             <div class="row Row-margin row-set" id="r10">
 
                 <div class="col-2 bdr" id="r10c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="log">log</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="log" onclick="log(this.id)">log</button>
                 </div>
                 <div class="col-2 bdr" id="r10c2">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="one" onclick="display(this.id)">1</button>
@@ -217,16 +220,16 @@
             <div class="row Row-margin row-set" id="r11">
 
                 <div class="col-2 bdr" id="r11c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ln">ln</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="ln" onclick="log(this.id)">ln</button>
                 </div>
                 <div class="col-2 bdr" id="r11c2">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="plus-min">+/-</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="plus-min" onclick="operation(this.id)">+/-</button>
                 </div>
                 <div class="col-2 bdr" id="r11c3">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="zero" onclick="display(this.id)">0</button>
                 </div>
                 <div class="col-2 bdr" id="r11c4">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="dot">.</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="dot" onclick="display(this.id)">.</button>
                 </div>
                 <div class="col-2 bdr" id="r11c5">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="equal" onclick="operation(this.id)">=</button>

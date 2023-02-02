@@ -25,7 +25,8 @@
   height: 3em;
   background-color: rgb(243, 243, 243);
   color: black;
-  direction: rtl;
+  /* direction: rtl; */
+  text-align: right;
   text-decoration: solid;
   font-weight: bold;
   font-size: 2em;
