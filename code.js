@@ -5,6 +5,10 @@ let signcounter = 0;
 let textcounter = 0;
 let equalcounter = 0;
 let plusmincount=0;
+let rcount=0;
+let lcount=0;
+// let value1=document.write("x<sup>y</sup>");
+console.log("answerbox val="+answerebox.value);
 
 function clearscr(id) 
 {
@@ -22,9 +26,9 @@ function clearscr(id)
 
 function display(id) 
 {
+    
+    
     let values = document.getElementById(id).innerText;
-    console.log("values = " + values);
-
     if (textcounter == 1) 
     {
         answerebox.value = "";
@@ -37,7 +41,9 @@ function display(id)
         showbox.value = "";
         equalcounter = 0;
     }
-
+    signcounter = 1;
+    textcounter = 0;
+    plusmincount=1;
     switch (values) 
     {
         case '1':
@@ -90,11 +96,18 @@ function display(id)
                 //showbox.value += values;
                 break;
             }
-            else 
+            if (answerebox.value == 0 && showbox.value !=0) 
+            {
+                answerebox.value += 0;
+                //showbox.value += values;
+                break;
+            }
+            if (answerebox.value == "") 
             {
                 signcounter = 0;
                 break;
             }
+
         case '.':
             if (answerebox.value == 0) 
             {
@@ -106,17 +119,17 @@ function display(id)
             {
                 answerebox.value += values;
             }
+        
+            
     }
-    signcounter = 1;
-    textcounter = 0;
-    plusmincount=1;
+   
 
 }
 
 function operation(id) 
 {
     
-
+    textcounter = 1;
     let sign = document.getElementById(id).innerText;
 
     if (signcounter == 1) 
@@ -157,13 +170,23 @@ function operation(id)
                 equalcounter = 1;
                 break;
 
-            // case '+/-':
-               
-                // break;
+            case 'xy':
+                if(answerebox.value=="")
+                {
+                    showbox.value = "0" + "**"+ "0";
+                }
+                else
+                {
+                showbox.value += answerebox.value + "**"+ "";
+                }
+                break;
+            case 'mod':
+            showbox.value += answerebox.value + "%" + "";
+            
+
         }
         
-
-        if (id=='plus-min' && answerebox.value != 0 && plusmincount==1) 
+       if (id=='plus-min' && answerebox.value != 0 && plusmincount==1) 
         {
             let show=showbox.value;
             answerebox.value = "-" + answerebox.value;
@@ -187,8 +210,8 @@ function operation(id)
         }
             
             // console.log("signcounter=" + signcounter);
-            textcounter = 1;
-            console.log("textcounter=" + textcounter);
+           
+            //console.log("textcounter=" + textcounter);
 
     }
     
@@ -219,9 +242,16 @@ function factorial()
    signcounter=0;
 
 }
-function pai()
+function pai(id)
 {
-    answerebox.value=Math.PI;
+    if(id=="pi")
+    {
+        answerebox.value=Math.PI;
+    }
+    if(id=="e")
+    answerebox.value=Math.E;
+    signcounter=1;
+    textcounter = 1;
     //console.log(Math.PI);
 }
 
@@ -241,6 +271,7 @@ function log(id)
         }
         if(user_value>0)
         {
+            showbox.value="ln("+user_value+")";
             answerebox.value=Math.log(user_value);
         }
     }
@@ -257,6 +288,7 @@ function log(id)
         }
         if(user_value>0)
         {
+            showbox.value="Log("+user_value+")";
             answerebox.value=Math.log10(user_value);
         }
     }
@@ -267,7 +299,72 @@ function log(id)
         answerebox.value=10**user_value      
         
     }
+    if(id=="root")
+    {
+        showbox.value="Root("+user_value+")";
+        answerebox.value=Math.sqrt(user_value);
+    }
+
+    if(id=="onebyx")
+    {
+        showbox.value="1/"+user_value;
+        answerebox.value=eval("1/"+user_value);
+    }
+    if(id="square")
+    {
+        showbox.value="square("+user_value+")";
+        answerebox.value=Math.SQRT(user_value);
+    }
     textcounter = 1;
     equalcounter = 1;
     signcounter=0;
+}
+
+
+
+function bodmas(id)
+{
+    let bracket=id;
+    let useval=answerebox.value;
+    
+    if(id=="open-brace")
+    {
+        showbox.value+="(";
+        rcount++;
+        
+        
+        
+    }
+   
+    
+    if(id=="close-brace" && rcount>0)
+    {
+        if(lcount==0)
+        {
+            showbox.value+="0)";
+        }
+        else
+        {
+            showbox.value+=")";
+
+        }
+        
+        rcount--;
+        lcount++; 
+        if(rcount==0)
+        {
+            lcount=0;
+            showbox.value+="*";
+        }
+       
+        
+    }
+    console.log("rcount="+rcount);
+    console.log("lcount="+lcount);
+    if(rcount>1)
+    {
+        signcounter=1;
+    }
+    
+    
 }

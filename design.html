@@ -93,10 +93,10 @@
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="2nd">2<sup>nd</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r5c2">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="pi" onclick="pai()"> &#928 </button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="pi" onclick="pai(id)"> &#928 </button>
                 </div>
                 <div class="col-2 bdr" id="r5c3">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="e">e</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="e"onclick="pai(id)">e</button>
                 </div>
                 <div class="col-2 bdr" id="r5c4">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="clear" onclick="clearscr(this.id)">C</button>
@@ -114,10 +114,10 @@
             <div class="row Row-margin row-set" id="r6">
 
                 <div class="col-2 bdr" id="r6c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="square">x<sup>2</sup></button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="square"  onclick="log(this.id)">x<sup>2</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r6c2">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="onebyx">1/x</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="onebyx" onclick="log(this.id)">1/x</button>
                 </div>
                 <div class="col-2 bdr" id="r6c3">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="abs">|x|</button>
@@ -126,7 +126,7 @@
                     <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="exp">exp</button>
                 </div>
                 <div class="col-2 bdr" id="r6c5">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="mod">mod</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100 side-btn" id="mod" onclick="operation(this.id)">mod</button>
                 </div>
                 <!-- 6th row END -->
             </div>
@@ -135,14 +135,14 @@
             <div class="row Row-margin row-set" id="r7">
 
                 <div class="col-2 bdr" id="r7c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="root">2<i
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="root" onclick="log(id)">2<i
                             class="fa-sharp fa-solid fa-square-root-variable"></i></button>
                 </div>
                 <div class="col-2 bdr" id="r7c2">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="open-brace">(</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="open-brace" onclick="bodmas(id)">(</button>
                 </div>
                 <div class="col-2 bdr" id="r7c3">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="close-brace">)</button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="close-brace" onclick="bodmas(id)">)</button>
                 </div>
                 <div class="col-2 bdr" id="r7c4">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="factorial" onclick="factorial()">n!</button>
@@ -157,7 +157,7 @@
             <div class="row Row-margin row-set" id="r8">
 
                 <div class="col-2 bdr" id="r8c1">
-                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="power" onclick="log(this.id)">x<sup>y</sup></button>
+                    <button type="button" class="btn btn-outline-secondary w-100 h-100" id="power" onclick="operation(this.id)">x<sup>y</sup></button>
                 </div>
                 <div class="col-2 bdr" id="r8c2">
                     <button type="button" class="btn btn-outline-secondary w-100 h-100" id="seven" onclick="display(this.id)">7</button>
