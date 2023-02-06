@@ -279,6 +279,10 @@ function log(id) {
         showbox.value = "square(" + user_value + ")";
         answerebox.value = Math.pow(user_value, 2);
         console.log(Math.pow(user_value, 2));
+    } else if (id == "cube") {
+        showbox.value = "cube(" + user_value + ")";
+        answerebox.value = Math.pow(user_value, 3);
+        console.log(Math.pow(user_value, 3));
     } else if (id == "abs") {
         if (answerebox.value == "") {
             user_value = showbox.value;
@@ -295,6 +299,26 @@ function log(id) {
             //showbox.value=eval(ans)
             showbox.value = user_value + ".e+0"
         }
+    } else if (id == "cube-root") {
+        showbox.value = "cube-root(" + user_value + ")";
+        answerebox.value = Math.cbrt(user_value);
+        //console.log(Math.pow(user_value, 3));
+    } else if (id == "yrootx") {
+        showbox.value = "cube-root(" + user_value + ")";
+        answerebox.value = Math.cbrt(user_value);
+        //console.log(Math.pow(user_value, 3));
+    } else if (id == "2x") {
+        showbox.value = "2<sup>" + user_value + "</sup>";
+        answerebox.value = Math.pow(2, user_value);
+        //console.log(Math.pow(user_value, 3));
+    } else if (id == "logyx") {
+        showbox.value = "cube-root(" + user_value + ")";
+        answerebox.value = Math.cbrt(user_value);
+        //console.log(Math.pow(user_value, 3));
+    } else if (id == "ex") {
+        showbox.value = "e<sup>" + user_value + "</sup>";
+        answerebox.value = Math.pow(Math.E, user_value);
+        //console.log(Math.pow(user_value, 3));
     }
 
     textcounter = 1;
@@ -504,4 +528,62 @@ function memory(id) {
 
     }
     alert("available data in memory := " + memory_array);
+}
+
+function trignomarty(id) {
+    let user_value = answerebox.value;
+    if (id == "sine") {
+
+        showbox.value = "sin(" + user_value + ")";
+        answerebox.value = Math.sin(user_value);
+        console.log("sine calling");
+    } else if (id == "coas") {
+        showbox.value = "cos(" + user_value + ")";
+        answerebox.value = Math.cos(user_value);
+    } else if (id == "tenn") {
+        showbox.value = "tan(" + user_value + ")";
+        answerebox.value = Math.tan(user_value);
+    } else if (id == "seec") {
+        showbox.value = "sec(" + user_value + ")";
+        answerebox.value = Math.sec(user_value);
+    } else if (id == "coot") {
+        showbox.value = "cot(" + user_value + ")";
+        answerebox.value = Math.cot(user_value);
+    } else if (id == "sinin") {
+        showbox.value = "asin(" + user_value + ")";
+        answerebox.value = Math.asin(user_value);
+    } else if (id == "cosin") {
+        showbox.value = "acos(" + user_value + ")";
+        answerebox.value = Math.acos(user_value);
+    } else if (id == "tenin") {
+        showbox.value = "atan(" + user_value + ")";
+        answerebox.value = Math.atan(user_value);
+    } else if (id == "secin") {
+        showbox.value = "asec(" + user_value + ")";
+        answerebox.value = Math.asec(user_value);
+    } else if (id == "cotin") {
+        showbox.value = "acot(" + user_value + ")";
+        answerebox.value = Math.acot(user_value);
+    } else if (id == "floor") {
+        showbox.value = "Floor(" + user_value + ")";
+        answerebox.value = Math.floor(user_value);
+    } else if (id == "round") {
+        showbox.value = "round(" + user_value + ")";
+        answerebox.value = Math.round(user_value);
+    } else if (id == "ceiling") {
+        showbox.value = "ceiling(" + user_value + ")";
+        answerebox.value = Math.ceil(user_value);
+    } else if (id == "rand") {
+        showbox.value = Math.random();
+        //answerebox.value = Math.ceil(user_value);
+    } else if (id == "dms") {
+        //showbox.value = Math.random();
+        //answerebox.value = Math.ceil(user_value);
+    } else if (id == "deg") {
+        showbox.value = "deg(" + user_value + ")";
+        answerebox.value = eval(user_value * 180 / Math.PI);
+    }
+    textcounter = 1;
+    equalcounter = 1;
+    signcounter = 0;
 }
