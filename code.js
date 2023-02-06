@@ -7,7 +7,7 @@ let equalcounter = 0;
 let plusmincount = 0;
 let rcount = 0;
 let lcount = 0;
-let memory_array=[];
+let memory_array = [];
 // let value1=document.write("x<sup>y</sup>");
 console.log("answerbox val=" + answerebox.value);
 
@@ -64,7 +64,7 @@ function display(id) {
             answerebox.value += values;
             //showbox.value += values;
             break;
-        //console.log("screen="+ ans);
+            //console.log("screen="+ ans);
         case '2':
             answerebox.value += values;
             //showbox.value += values;
@@ -108,13 +108,11 @@ function display(id) {
                 answerebox.value += values;
                 //showbox.value += values;
                 break;
-            }
-            else if (answerebox.value == 0 && showbox.value != 0) {
+            } else if (answerebox.value == 0 && showbox.value != 0) {
                 answerebox.value += 0;
                 //showbox.value += values;
                 break;
-            }
-            else if (answerebox.value == "") {
+            } else if (answerebox.value == "") {
                 signcounter = 0;
                 break;
             }
@@ -124,14 +122,12 @@ function display(id) {
                 answerebox.value = "0" + values;
                 //showbox.value += values;
                 break;
-            }
-            else {
+            } else {
                 answerebox.value += values;
             }
 
 
     }
-
 
 }
 
@@ -179,8 +175,7 @@ function operation(id) {
             case 'xy':
                 if (answerebox.value == "") {
                     showbox.value = "0" + "**" + "0";
-                }
-                else {
+                } else {
                     showbox.value += answerebox.value + "**" + "";
                 }
                 break;
@@ -198,12 +193,10 @@ function operation(id) {
             signcounter = 1;
             plusmincount = 0;
 
-        }
-        else {
+        } else {
             if (id == 'plus-min') {
                 signcounter = 1;
-            }
-            else {
+            } else {
                 signcounter = 0;
             }
 
@@ -222,8 +215,7 @@ function factorial() {
     if (answerebox.value == 0) {
         showbox.value = "1! =";
         answerebox.value = "1";
-    }
-    else {
+    } else {
         let factnum = answerebox.value;
         let ans = 1;
         for (let i = factnum; i > 0; i--) {
@@ -238,6 +230,7 @@ function factorial() {
     signcounter = 0;
 
 }
+
 function pai(id) {
     if (id == "pi") {
         answerebox.value = Math.PI;
@@ -255,70 +248,55 @@ function log(id) {
         if (user_value == 0) {
             answerebox.value = "invalid input!";
 
-        }
-        else if (user_value < 0) {
+        } else if (user_value < 0) {
             answerebox.value = "invalid input!";
-        }
-        else if (user_value > 0) {
+        } else if (user_value > 0) {
             showbox.value = "ln(" + user_value + ")";
             answerebox.value = Math.log(user_value);
         }
-    }
-    else if (id == "log") {
+    } else if (id == "log") {
         if (user_value == 0) {
             answerebox.value = "invalid input!";
 
-        }
-        else if (user_value < 0) {
+        } else if (user_value < 0) {
             answerebox.value = "invalid input!";
-        }
-        else if (user_value > 0) {
+        } else if (user_value > 0) {
             showbox.value = "Log(" + user_value + ")";
             answerebox.value = Math.log10(user_value);
         }
-    }
-    else if (id == "ten") {
+    } else if (id == "ten") {
 
         showbox.value = "10^" + user_value + "=";
         answerebox.value = 10 ** user_value
 
-    }
-    else if (id == "root") {
+    } else if (id == "root") {
         showbox.value = "Root(" + user_value + ")";
         answerebox.value = Math.sqrt(user_value);
-    }
-
-    else if (id == "onebyx") {
+    } else if (id == "onebyx") {
         showbox.value = "1/" + user_value;
         answerebox.value = eval("1/" + user_value);
-    }
-    else if (id == "square") {
+    } else if (id == "square") {
         showbox.value = "square(" + user_value + ")";
         answerebox.value = Math.pow(user_value, 2);
         console.log(Math.pow(user_value, 2));
-    }
-    else if (id == "abs") {
+    } else if (id == "abs") {
         if (answerebox.value == "") {
             user_value = showbox.value;
         }
         showbox.value = "abs(" + user_value + ")";
         answerebox.value = Math.abs(user_value);
 
-    }
-    else if(id=="fe" || id=="exp")
-    {
-        if(user_value=="")
-        {
-            showbox.value="0.e+0";
+    } else if (id == "fe" || id == "exp") {
+        if (user_value == "") {
+            showbox.value = "0.e+0";
 
-        }
-        else
-        {
+        } else {
             //let ans="user_value+0.e+0"
             //showbox.value=eval(ans)
-            showbox.value=user_value+".e+0"
+            showbox.value = user_value + ".e+0"
         }
     }
+
     textcounter = 1;
     equalcounter = 1;
     signcounter = 0;
@@ -327,6 +305,7 @@ function log(id) {
 
 let temp = 0;
 let fcount = 0;
+
 function bodmas(id) {
 
     if (id == "open-brace") {
@@ -337,13 +316,11 @@ function bodmas(id) {
         if (rcount == 0 && lcount == 0) {
             if (fcount == 1) {
                 answerebox.value += "*(";
-            }
-            else {
+            } else {
                 answerebox.value += "(";
             }
 
-        }
-        else {
+        } else {
             answerebox.value += "(";
         }
         //showbox.value += "(";
@@ -360,8 +337,7 @@ function bodmas(id) {
             if (rcount == 1) {
                 answerebox.value += "0)*";
                 fcount = 0;
-            }
-            else {
+            } else {
                 // if (rcount == 1) {
 
                 //     answerebox.value += ")*";
@@ -370,15 +346,13 @@ function bodmas(id) {
                 temp = 1;
 
             }
-        }
-        else {
+        } else {
             if (temp == 1 && rcount == 1) {
 
                 answerebox.value += ")*";
                 temp = 0;
                 fcount = 0;
-            }
-            else {
+            } else {
                 answerebox.value += ")";
                 fcount = 1;
             }
@@ -411,22 +385,20 @@ function bodmas(id) {
     }
 }
 let change = 0;
-let changecol=0;
+let changecol = 0;
+
 function degree(id) {
     let btnvalue = document.getElementById(id);
     if (id == "deg") {
         if (btnvalue.innerText == "DEG") {
             btnvalue.innerText = "RAD";
-        }
-        else if (btnvalue.innerText == "RAD") {
+        } else if (btnvalue.innerText == "RAD") {
             btnvalue.innerText = "GRAD";
-        }
-        else if (btnvalue.innerText == "GRAD") {
+        } else if (btnvalue.innerText == "GRAD") {
             btnvalue.innerText = "DEG";
         }
 
-    }
-    else if (id == "change") {
+    } else if (id == "change") {
         if (change == 0) {
             document.getElementById("sine").innerHTML = "sin<sup>-1</sup>";
             document.getElementById("sine").id = "sinin";
@@ -440,8 +412,7 @@ function degree(id) {
             document.getElementById("cssc").id = "sctin";
             document.getElementById("coot").innerHTML = "cot<sup>-1</sup>";
             document.getElementById("coot").id = "cotin";
-        }
-        else if (change == 1) {
+        } else if (change == 1) {
             document.getElementById("sinin").id = "sine";
             document.getElementById("sine").innerHTML = "sin";
             document.getElementById("cosin").id = "coas";
@@ -454,105 +425,83 @@ function degree(id) {
             document.getElementById("cssc").innerHTML = "sct";
             document.getElementById("cotin").id = "coot";
             document.getElementById("coot").innerHTML = "cot";
-            
+
 
         }
         if (change == 1) {
             change = 0;
-        }
-        else if (change == 0) {
+        } else if (change == 0) {
             change = 1;
         }
 
-    }
-    else if(id=="2nd")
-    {
-        if(changecol==0){
-            document.getElementById("square").innerHTML="x<sup>3</sup>";
+    } else if (id == "2nd") {
+        if (changecol == 0) {
+            document.getElementById("square").innerHTML = "x<sup>3</sup>";
             document.getElementById("square").id = "cube";
-            document.getElementById("root").innerHTML="3<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
+            document.getElementById("root").innerHTML = "3<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
             document.getElementById("root").id = "cube-root";
-            document.getElementById("power").innerHTML="y<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
+            document.getElementById("power").innerHTML = "y<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
             document.getElementById("power").id = "yrootx";
-            document.getElementById("ten").innerHTML="2<sup>x</sup>";
+            document.getElementById("ten").innerHTML = "2<sup>x</sup>";
             document.getElementById("ten").id = "2x";
-            document.getElementById("log").innerHTML="log<sub>y</sub><sup>x</sup>";
+            document.getElementById("log").innerHTML = "log<sub>y</sub><sup>x</sup>";
             document.getElementById("log").id = "logyx";
-            document.getElementById("ln").innerHTML="e<sup>x</sup>";
+            document.getElementById("ln").innerHTML = "e<sup>x</sup>";
             document.getElementById("ln").id = "ex";
-        }
-        else if(changecol==1){
+        } else if (changecol == 1) {
             document.getElementById("cube").id = "square";
-            document.getElementById("square").innerHTML="x<sup>2</sup>";
+            document.getElementById("square").innerHTML = "x<sup>2</sup>";
             document.getElementById("cube-root").id = "root";
-            document.getElementById("root").innerHTML="2<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
+            document.getElementById("root").innerHTML = "2<i class='fa-sharp fa-solid fa-square-root-variable'></i>";
             document.getElementById("yrootx").id = "power";
-            document.getElementById("power").innerHTML="x<sup>y</sup>";
+            document.getElementById("power").innerHTML = "x<sup>y</sup>";
             document.getElementById("2x").id = "ten";
-            document.getElementById("ten").innerHTML="10<sup>x</sup>";
+            document.getElementById("ten").innerHTML = "10<sup>x</sup>";
             document.getElementById("logyx").id = "log";
-            document.getElementById("log").innerHTML="log";
+            document.getElementById("log").innerHTML = "log";
             document.getElementById("ex").id = "ln";
-            document.getElementById("ln").innerHTML="ln";
+            document.getElementById("ln").innerHTML = "ln";
         }
         if (changecol == 1) {
             changecol = 0;
-        }
-        else if (changecol == 0) {
+        } else if (changecol == 0) {
             changecol = 1;
         }
 
     }
 }
 
-function memory(id)
-{
-    if(id=="mc")
-    {
-         while(memory_array.length > 0) {
+function memory(id) {
+    if (id == "mc") {
+        while (memory_array.length > 0) {
             memory_array.pop();
         }
-    }
-    else if(id=="mr")
-    {
-       if(answerebox.value!="")
-       {
-        answerebox.value="";
-       } 
-        if(memory_array.length==0)
-       {
-        answerebox.value=0;
-       }
-       else
-       {
-        answerebox.value+=memory_array[memory_array.length-1];
-       }
-       
-        signcounter=1;
-    }
-    else if(id=="m+")
-    {
+    } else if (id == "mr") {
+        if (answerebox.value != "") {
+            answerebox.value = "";
+        }
+        if (memory_array.length == 0) {
+            answerebox.value = 0;
+        } else {
+            answerebox.value += memory_array[memory_array.length - 1];
+        }
+
+        signcounter = 1;
+    } else if (id == "m+") {
         memory_array.push(answerebox.value);
- 
+
+
+    } else if (id == "m-") {
+        memory_array.pop();
+
+    } else if (id == "ms") {
+        if (answerebox.value == "") {
+            memory_array.push(0);
+        } else {
+            memory_array.push(answerebox.value);
+        }
+
 
     }
-    else if(id=="m-")
-    {
-        memory_array.pop();
-     
-    }
-    else if(id=="ms")
-    {
-        if(answerebox.value=="")
-        {
-            memory_array.push(0);
-        }
-        else
-        {
-            memory_array.push(answerebox.value); 
-        }
-           
-        
-    }
-    alert("available data in memory := "+ memory_array);
+    alert("available data in memory := " + memory_array);
 }
