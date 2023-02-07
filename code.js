@@ -1,15 +1,15 @@
 let showbox = document.getElementById("txtbstore");
 let answerebox = document.getElementById("answere");
 let number1, number2;
-let signcounter = 0;
-let textcounter = 0;
-let equalcounter = 0;
-let plusmincount = 0;
-let rcount = 0;
-let lcount = 0;
-let memory_array = [];
+let signcounter = 0;//for arithmatic type operations
+let textcounter = 0;//clear textbox
+let equalcounter = 0;//cleat status box
+let plusmincount = 0;//for +/-
+let rcount = 0;//for bracket
+let lcount = 0;//for bracket
+let memory_array = [];//for mc,mr,m+,m-
 // let value1=document.write("x<sup>y</sup>");
-console.log("answerbox val=" + answerebox.value);
+//console.log("answerbox val=" + answerebox.value);
 
 function clearscr(id) {
     if (id == "clear") {
@@ -41,7 +41,7 @@ function clearscr(id) {
     }
 
 }
-
+//for display data on answere box & status box
 function display(id) {
 
 
@@ -64,7 +64,7 @@ function display(id) {
             answerebox.value += values;
             //showbox.value += values;
             break;
-            //console.log("screen="+ ans);
+        //console.log("screen="+ ans);
         case '2':
             answerebox.value += values;
             //showbox.value += values;
@@ -104,18 +104,38 @@ function display(id) {
             break;
 
         case '0':
-            if (answerebox.value != 0) {
-                answerebox.value += values;
-                //showbox.value += values;
+            console.log(typeof (answerebox.value));
+            if (answerebox.value.length == 0) {
+                answerebox.value = 0;
+                console.log(answerebox.value.length);
+                console.log("case 1");
                 break;
-            } else if (answerebox.value == 0 && showbox.value != 0) {
+            } else if (answerebox.value.length == 1 && answerebox.value[0] == 0) {
+                console.log(answerebox.value.length);
+                console.log("case 2");
+                break;
+
+            }
+            else if (answerebox.value == 0 && showbox.value != 0) {
                 answerebox.value += 0;
+                console.log(answerebox.value.length);
+                console.log("case 3");
                 //showbox.value += values;
                 break;
-            } else if (answerebox.value == "") {
-                signcounter = 0;
+            } else if (answerebox.value != 0) {
+                answerebox.value += values;
+                console.log(answerebox.value.length);
+                console.log("case 4");
+                //showbox.value += values;
                 break;
             }
+        // else if (answerebox.value == "") {
+        //     console.log(answerebox.value.length);
+        //     console.log("case 3");
+        //     signcounter = 0;
+        //     break;
+        // }
+
 
         case '.':
             if (answerebox.value == 0) {
@@ -130,7 +150,7 @@ function display(id) {
     }
 
 }
-
+//function for Arithmatics
 function operation(id) {
 
     textcounter = 1;
@@ -209,7 +229,7 @@ function operation(id) {
     }
 
 }
-
+//factorial function
 function factorial() {
     console.log("answerebox value=" + answerebox.value)
     if (answerebox.value == 0) {
@@ -230,7 +250,7 @@ function factorial() {
     signcounter = 0;
 
 }
-
+//function for pai
 function pai(id) {
     if (id == "pi") {
         answerebox.value = Math.PI;
@@ -241,7 +261,7 @@ function pai(id) {
     textcounter = 1;
     //console.log(Math.PI);
 }
-
+//function for log,root,cube,square,...
 function log(id) {
     let user_value = answerebox.value;
     if (id == "ln") {
@@ -329,7 +349,7 @@ function log(id) {
 
 let temp = 0;
 let fcount = 0;
-
+//bracket function
 function bodmas(id) {
 
     if (id == "open-brace") {
@@ -399,18 +419,18 @@ function bodmas(id) {
         }
 
     }
-    console.log("rcount=" + rcount);
-    console.log("lcount=" + lcount);
-    console.log("fcount=" + fcount);
-    console.log("temp=" + temp);
-    console.log("=====================");
+    // console.log("rcount=" + rcount);
+    // console.log("lcount=" + lcount);
+    // console.log("fcount=" + fcount);
+    // console.log("temp=" + temp);
+    // console.log("=====================");
     if (rcount > 1) {
         signcounter = 1;
     }
 }
 let change = 0;
 let changecol = 0;
-
+//function for degree, function btn, trignomarty value change
 function degree(id) {
     let btnvalue = document.getElementById(id);
     if (id == "deg") {
@@ -494,11 +514,13 @@ function degree(id) {
 
     }
 }
-
+let arr_sum = 0;
+//function for mc,mr,...
 function memory(id) {
     if (id == "mc") {
         while (memory_array.length > 0) {
             memory_array.pop();
+            arr_sum = 0;
         }
     } else if (id == "mr") {
         if (answerebox.value != "") {
@@ -512,11 +534,19 @@ function memory(id) {
 
         signcounter = 1;
     } else if (id == "m+") {
-        memory_array.push(answerebox.value);
+        let arr_sum = 0;
+        for (let i = 0; i < memory_array.length; i++) {
+            arr_sum = arr_sum + Number(memory_array[i]);
+        }
+        memory_array.push(arr_sum);
 
 
     } else if (id == "m-") {
-        memory_array.pop();
+        let arr_sum = 0;
+        for (let i = 0; i < memory_array.length; i++) {
+            arr_sum = Number(memory_array[i]) - arr_sum;
+        }
+        memory_array.push(arr_sum);
 
     } else if (id == "ms") {
         if (answerebox.value == "") {
@@ -529,8 +559,11 @@ function memory(id) {
     }
     alert("available data in memory := " + memory_array);
 }
-
+//operation for trignomatry
 function trignomarty(id) {
+    textcounter = 1;
+    equalcounter = 1;
+    signcounter = 0;
     let user_value = answerebox.value;
     if (id == "sine") {
 
@@ -573,8 +606,11 @@ function trignomarty(id) {
     } else if (id == "ceiling") {
         showbox.value = "ceiling(" + user_value + ")";
         answerebox.value = Math.ceil(user_value);
-    } else if (id == "rand") {
-        showbox.value = Math.random();
+    } else if (id == "randd") {
+        answerebox.value = Math.random();
+        signcounter = 1;
+        textcounter = 0;
+        equalcounter = 0;
         //answerebox.value = Math.ceil(user_value);
     } else if (id == "dms") {
         //showbox.value = Math.random();
@@ -583,7 +619,5 @@ function trignomarty(id) {
         showbox.value = "deg(" + user_value + ")";
         answerebox.value = eval(user_value * 180 / Math.PI);
     }
-    textcounter = 1;
-    equalcounter = 1;
-    signcounter = 0;
+
 }
