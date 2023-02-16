@@ -7,10 +7,46 @@ let equalcounter = 0;//cleat status box
 let plusmincount = 0;//for +/-
 let rcount = 0;//for bracket
 let lcount = 0;//for bracket
+let repeatcount = 0;
 let memory_array = [];//for mc,mr,m+,m-
+let keyvalues = undefined;
+let numvalues = undefined;
+let temp = 0;
+let fcount = 0;
+let arr_sum = 0;
 // let value1=document.write("x<sup>y</sup>");
 //console.log("answerbox val=" + answerebox.value);
+window.addEventListener('keydown', (e) => {
+    if ((e.key >= 0 && e.key <= 9) ) {
+        // your code
+        //console.log(e.key);
+        keyvalues = e.key;
+        display();
+    }
+    if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/" || e.key === "%" || e.key === ".") {
+        console.log(e.key);
+        numvalues = e.key;
+        operation();
 
+    }
+    if (e.key === "Enter") {
+        numvalues = '=';
+        operation();
+    }
+    if (e.key === "Backspace") {
+        clearscr("delete");
+    }
+    if (e.key === "Escape") {
+        clearscr("clear");
+    }
+    if( e.key === "("  )
+    {
+        bodmas( "open-brace");
+    }
+    if(e.key === ")"){
+        bodmas( "close-brace");
+    }
+});
 function clearscr(id) {
     if (id == "clear") {
         answerebox.value = "";
@@ -43,9 +79,15 @@ function clearscr(id) {
 }
 //for display data on answere box & status box
 function display(id) {
+    let values;
+    if (keyvalues === undefined) {
+        values = document.getElementById(id).innerText;
+    }
+    else {
+        values = keyvalues;
+    }
 
 
-    let values = document.getElementById(id).innerText;
     if (textcounter == 1) {
         answerebox.value = "";
 
@@ -152,9 +194,22 @@ function display(id) {
 }
 //function for Arithmatics
 function operation(id) {
-
+    let sign
     textcounter = 1;
-    let sign = document.getElementById(id).innerText;
+    if (numvalues == undefined) {
+        sign = document.getElementById(id).innerText;
+    }
+    else {
+        sign = numvalues;
+    }
+
+    if (repeatcount == 1) {
+        //let tempans=answerebox.value;
+        showbox.value = '';
+        //console.log(tempans);
+        equalcounter = 0;
+        repeatcount = 0;
+    }
 
     if (signcounter == 1) {
         switch (sign) {
@@ -164,6 +219,7 @@ function operation(id) {
                 //answerebox.value += " " + sign;
                 //console.log("mul");
                 showbox.value += answerebox.value + sign + "";
+                signcounter = 0;
                 break;
             case '-':
                 //number1 = answerebox.value;
@@ -171,16 +227,26 @@ function operation(id) {
                 showbox.value += answerebox.value + sign + "";
                 //answerebox.value += " " + sign;
                 //console.log("mul");
+                signcounter = 0;
                 break;
-            case 'X':
+            // case 'X':
+            //     // showbox.value += "" + "*" + "";
+            //     showbox.value += answerebox.value + "*" + "";
+            //     signcounter = 0;
+            //     //answerebox.value += " " + sign;
+            //     //console.log("mul");
+            //     break;
+            case '*':
                 // showbox.value += "" + "*" + "";
                 showbox.value += answerebox.value + "*" + "";
+                signcounter = 0;
                 //answerebox.value += " " + sign;
                 //console.log("mul");
                 break;
             case '/':
                 // showbox.value += "" + sign + "";
                 showbox.value += answerebox.value + sign + "";
+                signcounter = 0;
                 //answerebox.value += " " + sign;
                 //console.log("mul");
                 break;
@@ -190,6 +256,8 @@ function operation(id) {
                 //showbox.value += answerebox.value + sign + "";
                 showbox.value += "" + sign + "";
                 equalcounter = 1;
+                signcounter = 1;
+                repeatcount = 1;
                 break;
 
             case 'xy':
@@ -200,7 +268,11 @@ function operation(id) {
                 }
                 break;
             case 'mod':
-                showbox.value += answerebox.value + "%" + "";
+                {
+                    showbox.value += answerebox.value + "%" + "";
+                    break;
+                }
+
 
 
         }
@@ -217,12 +289,17 @@ function operation(id) {
             if (id == 'plus-min') {
                 signcounter = 1;
             } else {
-                signcounter = 0;
+                fcount=0;
+                if (sign != '=') {
+                    signcounter = 0;
+                   
+                }
+
             }
 
         }
 
-        // console.log("signcounter=" + signcounter);
+        //console.log("signcounter=" + signcounter);
 
         //console.log("textcounter=" + textcounter);
 
@@ -347,8 +424,7 @@ function log(id) {
 }
 
 
-let temp = 0;
-let fcount = 0;
+
 //bracket function
 function bodmas(id) {
 
@@ -360,6 +436,7 @@ function bodmas(id) {
         if (rcount == 0 && lcount == 0) {
             if (fcount == 1) {
                 answerebox.value += "*(";
+                fcount=0;
             } else {
                 answerebox.value += "(";
             }
@@ -398,6 +475,7 @@ function bodmas(id) {
                 fcount = 0;
             } else {
                 answerebox.value += ")";
+         
                 fcount = 1;
             }
             // if (rcount == 1) {
@@ -514,14 +592,17 @@ function degree(id) {
 
     }
 }
-let arr_sum = 0;
+
 //function for mc,mr,...
 function memory(id) {
+    console.log(memory_array.length);
     if (id == "mc") {
         while (memory_array.length > 0) {
             memory_array.pop();
-            arr_sum = 0;
+            arr_sum = 0; 
         }
+     
+        localStorage.setItem("data", JSON.stringify(memory_array));
     } else if (id == "mr") {
         if (answerebox.value != "") {
             answerebox.value = "";
@@ -534,30 +615,50 @@ function memory(id) {
 
         signcounter = 1;
     } else if (id == "m+") {
-        let arr_sum = 0;
-        for (let i = 0; i < memory_array.length; i++) {
-            arr_sum = arr_sum + Number(memory_array[i]);
+        
+        // for (let i = 0; i < memory_array.length; i++) {
+        //     arr_sum = arr_sum + Number(memory_array[i]);
+        // }
+        arr_sum+=Number(answerebox.value);
+        if(memory_array.length==0)
+        {
+            memory_array[memory_array.length]=arr_sum;
         }
-        memory_array.push(arr_sum);
+        else{
+            memory_array[memory_array.length-1]=arr_sum;
+        }
+        
+        localStorage.setItem("data", JSON.stringify(memory_array));
 
 
     } else if (id == "m-") {
-        let arr_sum = 0;
-        for (let i = 0; i < memory_array.length; i++) {
-            arr_sum = Number(memory_array[i]) - arr_sum;
+        
+        // for (let i = 0; i < memory_array.length; i++) {
+        //     arr_sum = Number(memory_array[i]) - arr_sum;
+        // }
+        // memory_array.push(arr_sum);
+        arr_sum-=Number(answerebox.value);
+        if(memory_array.length==0)
+        {
+            memory_array[memory_array.length]=arr_sum;
         }
-        memory_array.push(arr_sum);
+        else{
+            memory_array[memory_array.length-1]=arr_sum;
+        }
+        localStorage.setItem("data", JSON.stringify(memory_array));
 
     } else if (id == "ms") {
         if (answerebox.value == "") {
             memory_array.push(0);
+            localStorage.setItem("data", JSON.stringify(memory_array));
         } else {
-            memory_array.push(answerebox.value);
+            memory_array.push(Number(answerebox.value));
+            localStorage.setItem("data", JSON.stringify(memory_array));
         }
 
 
     }
-    alert("available data in memory := " + memory_array);
+    console.log("available data in memory := " + memory_array);
 }
 //operation for trignomatry
 function trignomarty(id) {
