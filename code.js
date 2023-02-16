@@ -14,6 +14,9 @@ let numvalues = undefined;
 let temp = 0;
 let fcount = 0;
 let arr_sum = 0;
+let afteror=0;
+let expvalue=undefined;
+
 // let value1=document.write("x<sup>y</sup>");
 //console.log("answerbox val=" + answerebox.value);
 window.addEventListener('keydown', (e) => {
@@ -52,6 +55,7 @@ function clearscr(id) {
         answerebox.value = "";
         showbox.value = "";
         document.location.reload();
+
     }
     if (id == "delete") {
         let data = answerebox.value;
@@ -103,45 +107,109 @@ function display(id) {
     plusmincount = 1;
     switch (values) {
         case '1':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
+            
             //showbox.value += values;
             break;
         //console.log("screen="+ ans);
         case '2':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
         case '3':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
         case '4':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
         case '5':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
         case '6':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
         case '7':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
         case '8':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
         case '9':
-            answerebox.value += values;
+            if(expvalue!=undefined)
+            {
+                //showbox.value=expvalue +values;
+                answerebox.value=expvalue +values;
+            }
+            else{
+                answerebox.value += values;
+            }
             //showbox.value += values;
             break;
 
@@ -196,6 +264,10 @@ function display(id) {
 function operation(id) {
     let sign
     textcounter = 1;
+    if(afteror==1){
+        showbox.value="";
+        afteror=0;
+    }
     if (numvalues == undefined) {
         sign = document.getElementById(id).innerText;
     }
@@ -251,6 +323,7 @@ function operation(id) {
                 //console.log("mul");
                 break;
             case '=':
+
                 showbox.value += answerebox.value;
                 answerebox.value = eval(showbox.value);
                 //showbox.value += answerebox.value + sign + "";
@@ -340,6 +413,8 @@ function pai(id) {
 }
 //function for log,root,cube,square,...
 function log(id) {
+    signcounter = 1;
+    afteror=1;
     let user_value = answerebox.value;
     if (id == "ln") {
         if (user_value == 0) {
@@ -389,13 +464,18 @@ function log(id) {
 
     } else if (id == "fe" || id == "exp") {
         if (user_value == "") {
-            showbox.value = "0.e+0";
-
+            //showbox.value = "0.e+0";
+            answerebox.value="0.e+0";
         } else {
             //let ans="user_value+0.e+0"
             //showbox.value=eval(ans)
-            showbox.value = user_value + ".e+0"
+            //showbox.value = user_value + ".e+0"
+            answerebox.value=user_value + ".e+0";
         }
+        let str= answerebox.value;
+        expvalue=str.slice(0,-1);
+        //textcounter = 1;
+       
     } else if (id == "cube-root") {
         showbox.value = "cube-root(" + user_value + ")";
         answerebox.value = Math.cbrt(user_value);
@@ -418,9 +498,9 @@ function log(id) {
         //console.log(Math.pow(user_value, 3));
     }
 
-    textcounter = 1;
-    equalcounter = 1;
-    signcounter = 0;
+    // textcounter = 1;
+    // equalcounter = 1;
+    
 }
 
 
@@ -606,6 +686,7 @@ function memory(id) {
     } else if (id == "mr") {
         if (answerebox.value != "") {
             answerebox.value = "";
+            //showbox.value="";
         }
         if (memory_array.length == 0) {
             answerebox.value = 0;
@@ -662,9 +743,10 @@ function memory(id) {
 }
 //operation for trignomatry
 function trignomarty(id) {
-    textcounter = 1;
-    equalcounter = 1;
-    signcounter = 0;
+    // textcounter = 1;
+    // equalcounter = 1;
+    signcounter = 1;
+    afteror=1;
     let user_value = answerebox.value;
     if (id == "sine") {
 
