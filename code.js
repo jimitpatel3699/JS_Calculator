@@ -14,13 +14,13 @@ let numvalues = undefined;
 let temp = 0;
 let fcount = 0;
 let arr_sum = 0;
-let afteror=0;
-let expvalue=undefined;
+let afteror = 0;
+let expvalue = undefined;
 
 // let value1=document.write("x<sup>y</sup>");
 //console.log("answerbox val=" + answerebox.value);
 window.addEventListener('keydown', (e) => {
-    if ((e.key >= 0 && e.key <= 9) ) {
+    if ((e.key >= 0 && e.key <= 9)) {
         // your code
         //console.log(e.key);
         keyvalues = e.key;
@@ -42,19 +42,30 @@ window.addEventListener('keydown', (e) => {
     if (e.key === "Escape") {
         clearscr("clear");
     }
-    if( e.key === "("  )
-    {
-        bodmas( "open-brace");
+    if (e.key === "(") {
+        bodmas("open-brace");
     }
-    if(e.key === ")"){
-        bodmas( "close-brace");
+    if (e.key === ")") {
+        bodmas("close-brace");
     }
 });
 function clearscr(id) {
     if (id == "clear") {
         answerebox.value = "";
         showbox.value = "";
-        //document.location.reload();
+        signcounter = 0;//for arithmatic type operations
+        // textcounter = 0;//clear textbox
+        // equalcounter = 0;//cleat status box
+        // plusmincount = 0;//for +/-
+        // rcount = 0;//for bracket
+        // lcount = 0;//for bracket
+        // repeatcount = 0;
+        // temp = 0;
+        // fcount = 0;
+        // arr_sum = 0;
+        // afteror = 0;
+        ////document.location.reload();
+
 
     }
     if (id == "delete") {
@@ -107,107 +118,98 @@ function display(id) {
     plusmincount = 1;
     switch (values) {
         case '1':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
-            
+
             //showbox.value += values;
             break;
         //console.log("screen="+ ans);
         case '2':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
         case '3':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
         case '4':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
 
         case '5':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
 
         case '6':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
 
         case '7':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
 
         case '8':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
             break;
 
         case '9':
-            if(expvalue!=undefined)
-            {
+            if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
-                answerebox.value=expvalue +values;
+                answerebox.value = expvalue + values;
             }
-            else{
+            else {
                 answerebox.value += values;
             }
             //showbox.value += values;
@@ -264,9 +266,9 @@ function display(id) {
 function operation(id) {
     let sign
     textcounter = 1;
-    if(afteror==1){
-        showbox.value="";
-        afteror=0;
+    if (afteror == 1) {
+        showbox.value = "";
+        afteror = 0;
     }
     if (numvalues == undefined) {
         sign = document.getElementById(id).innerText;
@@ -362,10 +364,10 @@ function operation(id) {
             if (id == 'plus-min') {
                 signcounter = 1;
             } else {
-                fcount=0;
+                fcount = 0;
                 if (sign != '=') {
                     signcounter = 0;
-                   
+
                 }
 
             }
@@ -414,7 +416,7 @@ function pai(id) {
 //function for log,root,cube,square,...
 function log(id) {
     signcounter = 1;
-    afteror=1;
+    afteror = 1;
     let user_value = answerebox.value;
     if (id == "ln") {
         if (user_value == 0) {
@@ -465,17 +467,17 @@ function log(id) {
     } else if (id == "fe" || id == "exp") {
         if (user_value == "") {
             //showbox.value = "0.e+0";
-            answerebox.value="0.e+0";
+            answerebox.value = "0.e+0";
         } else {
             //let ans="user_value+0.e+0"
             //showbox.value=eval(ans)
             //showbox.value = user_value + ".e+0"
-            answerebox.value=user_value + ".e+0";
+            answerebox.value = user_value + ".e+0";
         }
-        let str= answerebox.value;
-        expvalue=str.slice(0,-1);
+        let str = answerebox.value;
+        expvalue = str.slice(0, -1);
         //textcounter = 1;
-       
+
     } else if (id == "cube-root") {
         showbox.value = "cube-root(" + user_value + ")";
         answerebox.value = Math.cbrt(user_value);
@@ -500,7 +502,7 @@ function log(id) {
 
     // textcounter = 1;
     // equalcounter = 1;
-    
+
 }
 
 
@@ -516,7 +518,7 @@ function bodmas(id) {
         if (rcount == 0 && lcount == 0) {
             if (fcount == 1) {
                 answerebox.value += "*(";
-                fcount=0;
+                fcount = 0;
             } else {
                 answerebox.value += "(";
             }
@@ -555,7 +557,7 @@ function bodmas(id) {
                 fcount = 0;
             } else {
                 answerebox.value += ")";
-         
+
                 fcount = 1;
             }
             // if (rcount == 1) {
@@ -679,9 +681,9 @@ function memory(id) {
     if (id == "mc") {
         while (memory_array.length > 0) {
             memory_array.pop();
-            arr_sum = 0; 
+            arr_sum = 0;
         }
-     
+
         localStorage.setItem("data", JSON.stringify(memory_array));
     } else if (id == "mr") {
         if (answerebox.value != "") {
@@ -696,35 +698,33 @@ function memory(id) {
 
         signcounter = 1;
     } else if (id == "m+") {
-        
+
         // for (let i = 0; i < memory_array.length; i++) {
         //     arr_sum = arr_sum + Number(memory_array[i]);
         // }
-        arr_sum+=Number(answerebox.value);
-        if(memory_array.length==0)
-        {
-            memory_array[memory_array.length]=arr_sum;
+        arr_sum += Number(answerebox.value);
+        if (memory_array.length == 0) {
+            memory_array[memory_array.length] = arr_sum;
         }
-        else{
-            memory_array[memory_array.length-1]=arr_sum;
+        else {
+            memory_array[memory_array.length - 1] = arr_sum;
         }
-        
+
         localStorage.setItem("data", JSON.stringify(memory_array));
 
 
     } else if (id == "m-") {
-        
+
         // for (let i = 0; i < memory_array.length; i++) {
         //     arr_sum = Number(memory_array[i]) - arr_sum;
         // }
         // memory_array.push(arr_sum);
-        arr_sum-=Number(answerebox.value);
-        if(memory_array.length==0)
-        {
-            memory_array[memory_array.length]=arr_sum;
+        arr_sum -= Number(answerebox.value);
+        if (memory_array.length == 0) {
+            memory_array[memory_array.length] = arr_sum;
         }
-        else{
-            memory_array[memory_array.length-1]=arr_sum;
+        else {
+            memory_array[memory_array.length - 1] = arr_sum;
         }
         localStorage.setItem("data", JSON.stringify(memory_array));
 
@@ -746,7 +746,7 @@ function trignomarty(id) {
     // textcounter = 1;
     // equalcounter = 1;
     signcounter = 1;
-    afteror=1;
+    afteror = 1;
     let user_value = answerebox.value;
     if (id == "sine") {
 
