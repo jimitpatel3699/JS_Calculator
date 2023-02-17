@@ -121,6 +121,7 @@ function display(id) {
             if (expvalue != undefined) {
                 //showbox.value=expvalue +values;
                 answerebox.value = expvalue + values;
+                 
             }
             else {
                 answerebox.value += values;
@@ -260,6 +261,8 @@ function display(id) {
 
 
     }
+    
+   
 
 }
 //function for Arithmatics
@@ -333,6 +336,10 @@ function operation(id) {
                 equalcounter = 1;
                 signcounter = 1;
                 repeatcount = 1;
+                if(expvalue != undefined)
+                {
+                    expvalue = undefined;
+                }
                 break;
 
             case 'xy':
