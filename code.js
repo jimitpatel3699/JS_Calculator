@@ -54,7 +54,7 @@ function clearscr(id) {
     if (id == "clear") {
         answerebox.value = "";
         showbox.value = "";
-        document.location.reload();
+        //document.location.reload();
 
     }
     if (id == "delete") {
