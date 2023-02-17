@@ -332,7 +332,7 @@ function operation(id) {
                 showbox.value += answerebox.value;
                 answerebox.value = eval(showbox.value);
                 //showbox.value += answerebox.value + sign + "";
-                showbox.value += "" + sign + "";
+                //showbox.value += "" + sign + "";
                 equalcounter = 1;
                 signcounter = 1;
                 repeatcount = 1;
